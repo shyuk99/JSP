@@ -113,7 +113,9 @@ public class DepartmentDAO {
 		return list;
 
 	}
-
+	
+	
+	// 부서번호를 조회하는 메서드
 	public DepartmentDTO getNum(int dpartmentId) {
 
 		String sql = "SELECT * FROM DEPARTMENTS WHERE DEPARTMENT_ID = ?";
@@ -125,7 +127,7 @@ public class DepartmentDAO {
 
 		try {
 
-			conn = ds.getConnection();
+			conn = ds.getConnection(); // conn객체
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dpartmentId);
 			rs = pstmt.executeQuery();

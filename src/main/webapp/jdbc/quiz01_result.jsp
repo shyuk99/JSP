@@ -17,11 +17,13 @@
 		
 	*/
 	
-	DepartmentDAO dao = DepartmentDAO.getInstance();
-		
 	int departmentId = Integer.parseInt(request.getParameter("departmentId"));
 	
-	DepartmentDTO dto = dao.getNum(departmentId);
+	DepartmentDAO dao = DepartmentDAO.getInstance(); // DAO생성
+	
+	DepartmentDTO dto = dao.getNum(departmentId); // 메서드 호출
+	
+	// dto를 quiz_ok로 넘김
 	
 	request.setAttribute("dto", dto);
 	
